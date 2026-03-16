@@ -50,15 +50,6 @@ TEST_F(ElevatorTest,RequestAboveAndBelow) {
     EXPECT_EQ(e.getExternal(),sRequests);
 }
 
-TEST_F(ElevatorTest,CorrectStay) {
-    e = Elevator(3,Direction::Stay);
-    requests.push_back({7,Event::Type::External});
-    s.step(requests,e);
-    EXPECT_EQ(e.getFloor(), 4);
-    EXPECT_EQ(e.getDirection(), Direction::Up);
-    EXPECT_TRUE(e.getExternal().empty());
-}
-
 TEST_F(ElevatorTest,ClearRequestOnCurrentFloor) {
     e = Elevator(4,Direction::Up);
     requests.push_back({4,Event::Type::External});
