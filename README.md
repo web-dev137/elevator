@@ -24,8 +24,8 @@ or
 
 ```bash
 cd build
-ctests
-```MTAK     
+ctest
+```
 # Requirements
 C++ 17
 CMake 4.2.3
