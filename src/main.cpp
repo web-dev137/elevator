@@ -4,22 +4,22 @@
 #include <iostream>
 
 int main() {
-    Elevator e(1, Direction::Up);
+    Elevator e;
     Simulation s;
     std::vector<std::vector<Event>> scenario(50);
-    scenario[12].push_back(Event(5,Event::Type::External));
-    scenario[16].push_back(Event(8,Event::Type::Internal));
-    scenario[23].push_back(Event(1,Event::Type::External));
+    scenario[1].push_back(Event(5,Event::Type::External));
+    scenario[6].push_back(Event(8,Event::Type::Internal));
+    scenario[9].push_back(Event(1,Event::Type::External));
 
-    for (int t = 12; t <= 30; t++)
+    for (int i = 1; i <= 20; i++)
     {
-       std::vector<Event> events = scenario[t];
-       std::cout<<"iteration"<<t<<std::endl;
+       std::vector<Event> events = scenario[i];
        s.step(events,e);
-       std::cout<<"t="<<t
-            <<"floor:"<<e.getFloor()
-            <<"dir"<<(e.getDirection() == Direction::Up ? "Up" : (e.getDirection() == Direction::Down ?"Down":"Stay"))
+       std::cout<<"Iteration:"<<i<<std::endl
+            <<"Floor:"<<e.getFloor()<<std::endl
+            <<"Direction:"<<(e.getDirection() == Direction::Up ? "Up" : (e.getDirection() == Direction::Down ?"Down":"Stay"))
             << std::endl;
+        std::cout<<"---------------"<<std::endl;      
     }
     
 }
