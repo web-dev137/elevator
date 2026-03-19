@@ -3,7 +3,7 @@
 
 void Simulation::step(std::vector<Event> requests, Elevator& elevator) {
     elevator.applyEvents(requests);
-     elevator.clearRequestsNotActual();
+    elevator.clearRequestsNotActual();
     elevator.move();
     Direction dir = elevator.choiceDirection();
     elevator.setDirection(dir);
