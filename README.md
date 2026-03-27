@@ -1,6 +1,18 @@
 # Elevator Simulation
 
-Elevator Operation Model The elevator's logic is as follows: We start from the first floor (if no starting floor is selected) and the direction is not selected, the default is "stay." We remove the irrelevant floor from the floor and elevator request sets. We move to the next floor depending on the direction. If there was a "stay," the elevator stops. We select a direction. If there are requests in the same direction, we continue moving in the selected direction. If there are no requests in the same direction, we select the opposite direction. If there are no requests, the elevator stops. If it reaches the first or last floor, the elevator also stops.
+## Elevator Operation Model
+
+The elevator simulation follows these rules:
+
+- The elevator starts at **floor 1** with the default state **"stay"** if no starting floor or direction is specified.
+- It removes irrelevant requests (calls that are no longer valid based on the current direction and position).
+- The elevator moves to the next floor according to its current direction.
+- If the state was "stay", the elevator stops and processes requests on the current floor.
+- Direction selection logic:
+  - If there are pending requests in the **current direction**, the elevator continues moving in that direction.
+  - If there are no requests in the current direction, it **switches to the opposite direction**.
+  - If there are no requests at all, the elevator stops.
+- The elevator always stops when it reaches the **first floor** or the **top floor** (last floor).
 
 # Model demonstration example
 ![Alt text](docs/Elevator_rise_from1_to_5_floor.png)
