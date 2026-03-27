@@ -13,6 +13,7 @@ The elevator simulation follows these rules:
   - If there are no requests in the current direction, it **switches to the opposite direction**.
   - If there are no requests at all, the elevator stops.
 - The elevator always stops when it reaches the **first floor** or the **top floor** (last floor).
+This logic ensures efficient handling of both internal (from inside the elevator) and external (floor calls) requests while preventing unnecessary movement
 
 # Model demonstration example
 ![Alt text](docs/Elevator_rise_from1_to_5_floor.png)
